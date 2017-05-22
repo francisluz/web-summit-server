@@ -5,7 +5,7 @@ module.exports = function(router) {
 
   router.route('/')
   .get(function(req, res, next) {
-    var apiUrl = 'https://1daycache.websummit.com/v1/conferences/companies/madmin/lists/top-50-previously-at-our-events/info?limit=15';
+    var apiUrl = 'https://1daycache.websummit.com/v1/conferences/ws16/info/attendees?limit=15&page=1';
     var reqCall = {
         url: apiUrl,
         json: true
