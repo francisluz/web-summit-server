@@ -1,4 +1,5 @@
-var request = require('request')
+var request = require('request');
+var DataItem = require('../models/dataitem');
 
 module.exports = function(router) {
   'use strict';
@@ -16,10 +17,27 @@ module.exports = function(router) {
         }
         if (response.statusCode == 200) {
             // var data = JSON.parse(json)
-            res.send(json);
+            res.send(deserialize(json));
         } else {
             next();
         }
     });
   });
 };
+
+function deserialize(data){
+
+    var items = data.attendees.map(function(people){
+        return new DataItem(
+            people.id,
+            people.name,
+            people.medium_image,
+            people.bio,
+            people.career,
+            people.company,
+            people.country
+        );
+    });
+
+    return { dataitem: items };
+}
