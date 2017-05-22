@@ -8,7 +8,7 @@ var myLogger = function (req, res, next) {
 }
 
 app.use(myLogger);
-app.use(cors);
+app.use(cors());
 
 app.get('/', function (req, res) {
   res.send('Welcome to Web Summit api.');
