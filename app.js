@@ -9,8 +9,11 @@ var myLogger = function (req, res, next) {
 app.use(myLogger)
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+  res.send('Welcome to Web Summit api.');
+});
+
+console.log('[SERVER] Initializing routes');
+require('./app/routes/index')(app);
 
 app.set('port', (process.env.PORT || 5000));
 
