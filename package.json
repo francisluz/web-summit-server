@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "change-case": "^3.0.1",
+    "cors": "^2.8.3",
     "express": "^4.15.3",
     "request": "^2.81.0",
     "require-dir": "^0.3.1"

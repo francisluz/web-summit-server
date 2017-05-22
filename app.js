@@ -1,4 +1,5 @@
 var express = require('express')
+var cors = require('cors')
 var app = express()
 
 var myLogger = function (req, res, next) {
@@ -6,7 +7,8 @@ var myLogger = function (req, res, next) {
   next()
 }
 
-app.use(myLogger)
+app.use(myLogger);
+app.use(cors);
 
 app.get('/', function (req, res) {
   res.send('Welcome to Web Summit api.');
