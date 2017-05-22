@@ -1,5 +1,5 @@
 var request = require('request');
-var DataItem = require('./models/dataitem');
+var DataItem = require('../models/dataitem');
 
 module.exports = function(router) {
   'use strict';
